@@ -104,15 +104,24 @@ To propagate covariance, we linearize the system such that $\delta \boldsymbol{\
 Previous discussions assumed constant IMU biases at time i for computational convenience
 
 Rotation w.r.t Gyro Bias:
-$$\mathbf{J}_{R, bg}^{k+1} = \Delta \mathbf{R}_{k, k+1}^\top \mathbf{J}_{R, bg}^k - \mathbf{J}_r \Delta t$$ 
+
+$\mathbf{J}_{R, bg}^{k+1} = \Delta \mathbf{R}_{k, k+1}^\top \mathbf{J}_{R, bg}^k - \mathbf{J}_r \Delta t$
+
 Velocity w.r.t Accel Bias:
-$$\mathbf{J}_{v, ba}^{k+1} = \mathbf{J}_{v, ba}^k - \Delta \mathbf{R}_{ik} \Delta t$$ 
+
+$\mathbf{J}_{v, ba}^{k+1} = \mathbf{J}_{v, ba}^k - \Delta \mathbf{R}_{ik} \Delta t$ 
+
 Velocity w.r.t Gyro Bias:
-$$\mathbf{J}_{v, bg}^{k+1} = \mathbf{J}_{v, bg}^k - \Delta \mathbf{R}_{ik} (\tilde{a}_k - \mathbf{b}_{ai})^\wedge \mathbf{J}_{R, bg}^k \Delta t$$
+
+$\mathbf{J}_{v, bg}^{k+1} = \mathbf{J}_{v, bg}^k - \Delta \mathbf{R}_{ik} (\tilde{a}_k - \mathbf{b}_{ai})^\wedge \mathbf{J}_{R, bg}^k \Delta t$
+
 Position w.r.t Accel Bias:
-$$\mathbf{J}_{p, ba}^{k+1} = \mathbf{J}_{p, ba}^k + \mathbf{J}_{v, ba}^k \Delta t - \frac{1}{2} \Delta \mathbf{R}_{ik} \Delta t^2$$
+
+$\mathbf{J}_{p, ba}^{k+1} = \mathbf{J}_{p, ba}^k + \mathbf{J}_{v, ba}^k \Delta t - \frac{1}{2} \Delta \mathbf{R}_{ik} \Delta t^2$
+
 Position w.r.t Gyro Bias:
-$$\mathbf{J}_{p, bg}^{k+1} = \mathbf{J}_{p, bg}^k + \mathbf{J}_{v, bg}^k \Delta t - \frac{1}{2} \Delta \mathbf{R}_{ik} (\tilde{a}_k - \mathbf{b}_{ai})^\wedge \mathbf{J}_{R, bg}^k \Delta t^2$$
+
+$\mathbf{J}_{p, bg}^{k+1} = \mathbf{J}_{p, bg}^k + \mathbf{J}_{v, bg}^k \Delta t - \frac{1}{2} \Delta \mathbf{R}_{ik} (\tilde{a}_k - \mathbf{b}_{ai})^\wedge \mathbf{J}_{R, bg}^k \Delta t^2$
 
 
 ## Implementation Tips
