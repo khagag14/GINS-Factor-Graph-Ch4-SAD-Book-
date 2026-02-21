@@ -122,13 +122,16 @@ $$\mathbf{J}_{p, bg}^{k+1} = \mathbf{J}_{p, bg}^k + \mathbf{J}_{v, bg}^k \Delta 
 
 # Pre-Integration Factor Graph 
 ## Residual
-Rotation 
+Rotation
+
 $$\mathbf{r}_{\Delta R} = \text{Log} \left( \Delta \tilde{\mathbf{R}}_{ij}(\mathbf{b}_{gi})^\top \mathbf{R}_i^\top \mathbf{R}_j \right)$$
 
 Velocity
+
 $$\mathbf{r}_{\Delta v} = \mathbf{R}_i^\top (\mathbf{v}_j - \mathbf{v}_i - \mathbf{g} \Delta t_{ij}) - \Delta \tilde{\mathbf{v}}_{ij}(\mathbf{b}_{gi}, \mathbf{b}_{ai})$$
 
 Position
+
 $$\mathbf{r}_{\Delta p} = \mathbf{R}_i^\top (\mathbf{p}_j - \mathbf{p}_i - \mathbf{v}_i \Delta t_{ij} - \frac{1}{2} \mathbf{g} \Delta t_{ij}^2) - \Delta \tilde{\mathbf{p}}_{ij}(\mathbf{b}_{gi}, \mathbf{b}_{ai})$$
 
 ## Jacobian of Residual w.r.t Each Vertex-Dim  
